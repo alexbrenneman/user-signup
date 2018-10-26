@@ -1,4 +1,4 @@
-from flask import Flask, redirect,request
+from flask import Flask
 import cgi
 import os
 import jinja2
@@ -12,5 +12,14 @@ app.config['DEBUG'] = True
 
 @app.route('/')
 def index():
-    template = jinna_env.get_template('index.html')
+    template = jinja_env.get_template('index.html')
     return template.render()
+
+@app.route('/')
+def username():
+    if len(username) < (1):
+        return ("Must have a username")
+   
+
+
+app.run()
