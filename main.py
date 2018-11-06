@@ -59,7 +59,7 @@ def validation():
         return redirect('/welcome?username='+username)
     else:
         template = jinja_env.get_template('index.html')
-        return template.render(valid_username=valid_username, valid_password=valid_password, valid_email = valid_email)
+        return template.render(username=username, email=email, valid_username=valid_username, valid_password=valid_password, valid_email = valid_email)
         
 @app.route('/welcome')
 def welcome():   
